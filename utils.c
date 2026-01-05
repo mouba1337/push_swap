@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 22:59:16 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/03 23:24:52 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/04 22:52:31 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack     *last(t_stack *h)
 {
     if (!h)
-        return (NULL);
+       return (NULL);
     while (h->next)
         h = h->next;
     return (h);
