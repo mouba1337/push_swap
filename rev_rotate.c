@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 00:52:35 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/05 01:17:16 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/06 00:04:51 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ static void     rev_rotate(t_stack **a)
     (*a)->prev = NULL;  
 }
 
-void    rra(t_stack **a,  int print)
+void    rra(t_stack **a,  bool check)
 {
     rev_rotate(a);
-    if (print)
+    if (!check)
         write(1, "rra\n", 4);
 }
 
-void    rrb(t_stack **b,  int print)
+void    rrb(t_stack **b,  bool check)
 {
     rev_rotate(b);
-    if (print)
+    if (!check)
         write(1, "rrb\n", 4);
 }
 
-void    rrr(t_stack **a, t_stack **b,  int print)
+void    rrr(t_stack **a, t_stack **b,  bool check)
 {
     rev_rotate(a);
     rev_rotate(b);
-    if (print)
+    if (!check)
         write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 22:59:16 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/04 22:52:31 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/05 23:39:59 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ void    append(t_stack **hh, int n)
         lastnode->next = node;
         node->prev = lastnode;
     }
+}
+
+int     lstsize(t_stack *a)
+{
+    int     count;
+
+    count = 0;
+    while (a)
+    {
+        a = a->next;
+        count++;
+    }
+    return (count);
 }

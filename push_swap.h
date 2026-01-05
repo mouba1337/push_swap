@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 20:52:09 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/05 00:51:32 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/06 00:13:34 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <stdbool.h>
 
 typedef struct sss
 {
@@ -32,13 +33,16 @@ long     atoll(const char *avv);
 void    append(t_stack **hh, int n);
 t_stack     *last(t_stack *h);
 void check(t_stack **s, char **av);
-static void     push(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b, int print);
-void pa(t_stack **a, t_stack **b, int print);
-static void rotate(t_stack **stack);
-void    ra(t_stack **a, int print);
-void    rb(t_stack **b, int print);
-void rr(t_stack **a, t_stack **b, int print);
+void pb(t_stack **a, t_stack **b, bool check);
+void pa(t_stack **a, t_stack **b, bool check);
+void    ra(t_stack **a, bool check);
+void    rb(t_stack **b, bool check);
+void rr(t_stack **a, t_stack **b, bool check);
+char    **split(char *s);
+int     lstsize(t_stack *a);
+void    sa(t_stack **a, bool check);
+void    sb(t_stack **b, bool check);
+void    ss(t_stack **a, t_stack **b, bool check);
 
 
 

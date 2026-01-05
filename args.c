@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 23:31:34 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/04 23:26:20 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/05 21:56:14 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,26 @@ void check(t_stack **s, char **av)
             freee(s);
         append(s, (int)n);
         av++;
+    }
+}
+
+void    indexing(t_stack *a)
+{
+    t_stack     *current;
+    t_stack     *runner;
+    int     sss;
+    
+    current = a;
+    while (current)
+    {
+        runner = a;
+        while (runner)
+        {
+            if (current->value > runner->value)
+                sss++;
+            runner = runner->next;
+        }
+        current->index = sss;
+        current = current->next;
     }
 }

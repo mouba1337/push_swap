@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 23:44:19 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/05 00:28:47 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/06 00:13:11 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ static void     push(t_stack **a, t_stack **b)
     }        
 }
 
-void pa(t_stack **a, t_stack **b, int print)
+void pa(t_stack **a, t_stack **b, bool check)
 {
     push(b, a);
-    if (print)
+    if (!check)
         write (1, "pa\n", 3);
 }
 
-void pb(t_stack **a, t_stack **b, int print)
+void pb(t_stack **a, t_stack **b, bool check)
 {
     push(a, b);
-    if (print)
+    if (!check)
         write (1, "pb\n", 3);
 }
