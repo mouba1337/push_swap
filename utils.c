@@ -6,54 +6,55 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 22:59:16 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/05 23:39:59 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/08 02:17:58 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack     *last(t_stack *h)
+t_stack	*last(t_stack *h)
 {
-    if (!h)
-       return (NULL);
-    while (h->next)
-        h = h->next;
-    return (h);
+	if (!h)
+		return (NULL);
+	while (h->next)
+		h = h->next;
+	return (h);
 }
 
-void    append(t_stack **hh, int n)
+void	append(t_stack **hh, int n)
 {
-    t_stack *node;
-    t_stack *lastnode;
-    if (!hh)
-        return;
-    node = malloc(sizeof(t_stack));
-    if (!node)
-        return;
-    node->next = NULL;
-    node->value = n;
-    if (*hh = NULL)
-    {
-        *hh = node;
-        node->prev = NULL;
-    }
-    else 
-    {
-        lastnode = last(*hh);
-        lastnode->next = node;
-        node->prev = lastnode;
-    }
+	t_stack	*node;
+	t_stack	*lastnode;
+
+	if (!hh)
+		return ;
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return ;
+	node->next = NULL;
+	node->value = n;
+	if (*hh == NULL)
+	{
+		*hh = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		lastnode = last(*hh);
+		lastnode->next = node;
+		node->prev = lastnode;
+	}
 }
 
-int     lstsize(t_stack *a)
+int	lstsize(t_stack *a)
 {
-    int     count;
+	int	count;
 
-    count = 0;
-    while (a)
-    {
-        a = a->next;
-        count++;
-    }
-    return (count);
+	count = 0;
+	while (a)
+	{
+		a = a->next;
+		count++;
+	}
+	return (count);
 }
