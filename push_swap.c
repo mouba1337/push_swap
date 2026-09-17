@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:23:49 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/08 02:07:10 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/08 19:31:58 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	fre(t_stack **s)
 	*s = NULL;
 }
 
-static void	freeargs(char **args)
+void	freeargs(char **args)
 {
 	int	i;
 
@@ -67,9 +67,9 @@ static void	parseargs(int ac, char **av, t_stack **a)
 		if (!args || !*args)
 		{
 			freeargs(args);
-			freee(&a);
+			freee(a);
 		}
-		check(&a, args);
+		check(a, args);
 		freeargs(args);
 		i++;
 	}
@@ -91,7 +91,7 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	indexing(a);
-	sorting(&a, &b);
+	sort(&a, &b);
 	fre(&a);
 	fre(&b);
 	return (0);

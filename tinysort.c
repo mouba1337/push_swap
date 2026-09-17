@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 23:46:01 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/08 02:17:05 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/08 19:11:04 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static t_stack	*highest(t_stack *s)
 	if (!s)
 		return (NULL);
 	high = s->value;
-	hnode = NULL;
+	hnode = s;
 	while (s)
 	{
 		if (s->value > high)
@@ -41,7 +41,7 @@ static t_stack	*smallx(t_stack *s)
 	if (!s)
 		return (NULL);
 	small = s->value;
-	snode = NULL;
+	snode = s;
 	while (s)
 	{
 		if (s->value < small)
@@ -74,11 +74,11 @@ void	sort5(t_stack **a, t_stack **b)
 	while (lstsize(*a) > 3)
 	{
 		smallest = smallx(*a);
-		while (*a != smallest)
+		if (((*a)->next == smallest))
+			ra(a, false);
+		else
 		{
-			if (((*a)->next == smallest))
-				ra(a, false);
-			else
+			while (*a != smallest)
 				rra(a, false);
 		}
 		pb(a, b, false);

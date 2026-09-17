@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = cc 
+CC = cc -g
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = push_swap.c errors.c args.c push.c rev_rotate.c rotate.c sort.c \

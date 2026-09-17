@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 23:31:34 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/08 01:57:30 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/08 19:36:46 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,27 @@ long	atooll(const char *avv)
 void	check(t_stack **s, char **av)
 {
 	long	n;
+	char	**tmp;
 
+	tmp = av;
 	while (*av)
 	{
 		if (syntax(*av))
+		{
+			freeargs(tmp);
 			freee(s);
+		}
 		n = atooll(*av);
 		if (n < INT_MIN || n > INT_MAX)
+		{
+			freeargs(tmp);
 			freee(s);
+		}
 		if (dupp(*s, (int)n))
+		{
+			freeargs(tmp);
 			freee(s);
+		}
 		append(s, (int)n);
 		av++;
 	}

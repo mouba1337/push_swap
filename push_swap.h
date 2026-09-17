@@ -6,7 +6,7 @@
 /*   By: mhend <mhend@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 20:52:09 by mhend             #+#    #+#             */
-/*   Updated: 2026/01/07 19:08:51 by mhend            ###   ########.fr       */
+/*   Updated: 2026/01/08 19:32:14 by mhend            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void			rra(t_stack **a, bool check);
 void			rrb(t_stack **b, bool check);
 void			rrr(t_stack **a, t_stack **b, bool check);
 void			indexing(t_stack *a);
+void			sort(t_stack **s, t_stack **ss);
+void			freeargs(char **args);
 
 #endif
